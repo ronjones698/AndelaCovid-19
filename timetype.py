@@ -18,7 +18,6 @@ def days(data):
     severeImpact['casesForVentilatorsByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.02)
     impact['dollarsInFlight'] = trunc(impact['infectionsByRequestedTime'] * data['region']['avgDailyIncomeInUSD'] * data['region']['avgDailyIncomePopulation'])
     severeImpact['dollarsInFlight'] = trunc(severeImpact['infectionsByRequestedTime']*data['region']['avgDailyIncomeInUSD'] *data['region']['avgDailyIncomePopulation'])
-
     result = {
         'data': data,
         'impact': impact,
@@ -49,6 +48,7 @@ def weeks(data):
         'impact': impact,
         'severeImpact':severeImpact
     }
+    return result
 
 def months(data):
     impact = {}
