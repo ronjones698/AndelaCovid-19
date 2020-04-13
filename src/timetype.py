@@ -46,7 +46,7 @@ def weeks(data):
     result = {
         'data': data,
         'impact': impact,
-        'severeImpact':severeImpact
+        'severeImpact':severeImpact,
     }
     return result
 
@@ -69,7 +69,7 @@ def months(data):
     impact['dollarsInFlight'] = trunc(impact['infectionsByRequestedTime'] * data['region']['avgDailyIncomeInUSD'] * data['region']['avgDailyIncomePopulation']/data['timeToElapse'])
     severeImpact['dollarsInFlight'] = trunc(severeImpact['infectionsByRequestedTime']*data['region']['avgDailyIncomeInUSD'] *data['region']['avgDailyIncomePopulation']/data['timeToElapse']) 
     result = {
-        
+
         'data': data,
         'impact': impact,
         'severeImpact':severeImpact
