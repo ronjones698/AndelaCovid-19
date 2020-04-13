@@ -1,5 +1,4 @@
 from math import trunc
-from flask import g,Flask
 
 def days(data):
     impact = {}
