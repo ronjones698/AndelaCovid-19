@@ -7,6 +7,12 @@ def days(data):
     severeImpact['currentlyInfected'] = data['reportedCases'] * 50
     impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeToElapse'] / 3))
     severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc(data['timeToElapse'] / 3))
+    impact['severeCasesByRequestedTime'] = trunc(impact['infectionsByRequestedTime'] * 0.15)
+    severeImpact['severeCasesByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.15)
+    availablebeds = trunc(data['totalHospitalBeds'] * 0.35)
+    impact['hospitalBedsByRequestedTime'] = availablebeds - impact['severeCasesByRequestedTime']
+    severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime']
+    
     result = {
         'data': data,
         'impact': impact,
@@ -21,6 +27,9 @@ def weeks(data):
     severeImpact['currentlyInfected'] = data['reportedCases'] * 50
     impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeToElapse'] *7 / 3))
     severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc(data['timeToElapse']*7/ 3))
+    availablebeds = trunc(data['totalHospitalBeds'] * 0.35)
+    impact['hospitalBedsByRequestedTime'] = availablebeds - impact['severeCasesByRequestedTime']
+    severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime']    
     result = {
         'data': data,
         'impact': impact,
@@ -35,6 +44,9 @@ def months(data):
     severeImpact['currentlyInfected'] = data['reportedCases'] * 50
     impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeToElapse']*30/ 3))
     severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc(data['timeToElapse']*30/ 3))
+    availablebeds = trunc(data['totalHospitalBeds'] * 0.35)
+    impact['hospitalBedsByRequestedTime'] = availablebeds - impact['severeCasesByRequestedTime']
+    severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime']    
     result = {
         'data': data,
         'impact': impact,
