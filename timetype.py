@@ -5,8 +5,8 @@ def days(data):
     severeImpact = {}
     impact['currentlyInfected'] = data['reportedCases'] * 10
     severeImpact['currentlyInfected'] = data['reportedCases'] * 50
-    impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeElapsed'] / 3))
-    severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc(data['timeElapsed'] / 3))
+    impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeToElapse'] / 3))
+    severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc(data['timeToElapse'] / 3))
     result = {
         'data': data,
         'impact': impact,
@@ -19,8 +19,8 @@ def weeks(data):
     severeImpact = {}
     impact['currentlyInfected'] = data['reportedCases'] * 10
     severeImpact['currentlyInfected'] = data['reportedCases'] * 50
-    impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeElapsed'] *7 / 3))
-    severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc(data['timeElapsed']*7/ 3))
+    impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeToElapse'] *7 / 3))
+    severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc(data['timeToElapse']*7/ 3))
     result = {
         'data': data,
         'impact': impact,
@@ -33,8 +33,8 @@ def months(data):
     severeImpact = {}
     impact['currentlyInfected'] = data['reportedCases'] * 10
     severeImpact['currentlyInfected'] = data['reportedCases'] * 50
-    impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeElapsed']*30/ 3))
-    severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc(data['timeElapsed']*30/ 3))
+    impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeToElapse']*30/ 3))
+    severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc(data['timeToElapse']*30/ 3))
     result = {
         'data': data,
         'impact': impact,
