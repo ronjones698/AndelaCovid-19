@@ -9,6 +9,3 @@ def estimator(data):
   else:
     results = months(data) 
   return results
-
-  
-
