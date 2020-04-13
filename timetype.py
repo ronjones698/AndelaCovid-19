@@ -11,7 +11,7 @@ def days(data):
     severeImpact['severeCasesByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.15)
     availablebeds = trunc(data['totalHospitalBeds'] * 0.35)
     impact['hospitalBedsByRequestedTime'] = availablebeds - impact['severeCasesByRequestedTime'] +1
-    severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime']
+    severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime']+1
     
     result = {
         'data': data,
@@ -31,7 +31,7 @@ def weeks(data):
     severeImpact['severeCasesByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.15)
     availablebeds = trunc(data['totalHospitalBeds'] * 0.35)
     impact['hospitalBedsByRequestedTime'] = availablebeds - impact['severeCasesByRequestedTime'] +1
-    severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime']    
+    severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime']+1    
     result = {
         'data': data,
         'impact': impact,
@@ -50,7 +50,7 @@ def months(data):
     severeImpact['severeCasesByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.15) 
     availablebeds = trunc(data['totalHospitalBeds'] * 0.35)
     impact['hospitalBedsByRequestedTime'] = availablebeds - impact['severeCasesByRequestedTime'] +1
-    severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime']    
+    severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime'] +1   
     result = {
         'data': data,
         'impact': impact,
