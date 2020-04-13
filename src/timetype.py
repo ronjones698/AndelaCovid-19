@@ -1,5 +1,5 @@
 from math import trunc
-
+from flask import g,Flask
 def days(data):
     impact = {}
     severeImpact = {}
@@ -46,7 +46,7 @@ def weeks(data):
     result = {
         'data': data,
         'impact': impact,
-        'severeImpact':severeImpact,
+        'severeImpact':severeImpact
     }
     return result
 
@@ -67,9 +67,8 @@ def months(data):
     impact['casesForVentilatorsByRequestedTime'] = trunc(impact['infectionsByRequestedTime'] * 0.02)
     severeImpact['casesForVentilatorsByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.02)
     impact['dollarsInFlight'] = trunc(impact['infectionsByRequestedTime'] * data['region']['avgDailyIncomeInUSD'] * data['region']['avgDailyIncomePopulation']/data['timeToElapse'])
-    severeImpact['dollarsInFlight'] = trunc(severeImpact['infectionsByRequestedTime']*data['region']['avgDailyIncomeInUSD'] *data['region']['avgDailyIncomePopulation']/data['timeToElapse']) 
+    severeImpact['dollarsInFlight'] = trunc(severeImpact['infectionsByRequestedTime']*data['region']['avgDailyIncomeInUSD'] *data['region']['avgDailyIncomePopulation']/data['timeToElapse'])
     result = {
-
         'data': data,
         'impact': impact,
         'severeImpact':severeImpact
