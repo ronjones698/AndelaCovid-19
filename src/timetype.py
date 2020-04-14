@@ -16,8 +16,8 @@ def days(data):
     severeImpact['casesForICUByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.05)
     impact['casesForVentilatorsByRequestedTime'] = trunc(impact['infectionsByRequestedTime'] * 0.02)
     severeImpact['casesForVentilatorsByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.02)
-    impact['dollarsInFlight'] = trunc((impact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])*data['timeToElapse'])
-    severeImpact['dollarsInFlight'] = trunc((severeImpact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])*data['timeToElapse'])
+    impact['dollarsInFlight'] = trunc((impact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])/data['timeToElapse'])
+    severeImpact['dollarsInFlight'] = trunc((severeImpact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])/data['timeToElapse'])
     result = {
         'data': data,
         'impact': impact,
@@ -41,8 +41,8 @@ def weeks(data):
     severeImpact['casesForICUByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.05)
     impact['casesForVentilatorsByRequestedTime'] = trunc(impact['infectionsByRequestedTime'] * 0.02)
     severeImpact['casesForVentilatorsByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.02)
-    impact['dollarsInFlight'] = trunc((impact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])*data['timeToElapse'])
-    severeImpact['dollarsInFlight'] = trunc((severeImpact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])*data['timeToElapse'])
+    impact['dollarsInFlight'] = trunc((impact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])/data['timeToElapse'])
+    severeImpact['dollarsInFlight'] = trunc((severeImpact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])/data['timeToElapse'])
     result = {
         'data': data,
         'impact': impact,
@@ -66,8 +66,8 @@ def months(data):
     severeImpact['casesForICUByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.05)
     impact['casesForVentilatorsByRequestedTime'] = trunc(impact['infectionsByRequestedTime'] * 0.02)
     severeImpact['casesForVentilatorsByRequestedTime'] = trunc(severeImpact['infectionsByRequestedTime'] * 0.02)
-    impact['dollarsInFlight'] = trunc((impact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])*data['timeToElapse'])
-    severeImpact['dollarsInFlight'] = trunc((severeImpact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])*data['timeToElapse'])
+    impact['dollarsInFlight'] = trunc((impact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])/data['timeToElapse'])
+    severeImpact['dollarsInFlight'] = trunc((severeImpact["infectionsByRequestedTime"] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD'])/data['timeToElapse'])
     result = {
         'data': data,
         'impact': impact,
